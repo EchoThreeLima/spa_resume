@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { 
   Container, 
   Typography, 
@@ -12,23 +12,67 @@ import {
   Grid,
   Avatar,
   Chip,
-  Divider
+  Divider,
+  Modal,
+  Fade,
+  Backdrop
 } from '@mui/material'
-import { GitHub, LinkedIn, Email, Phone, LocationOn } from '@mui/icons-material'
+import { GitHub, LinkedIn, Email, LocationOn } from '@mui/icons-material'
 
 // Import your images
 import brandonSuit from './assets/images/brandon_suit.webp'
 import brandonMilitary from './assets/images/brandon_military.webp'
 import brandonFamily from './assets/images/brandon_family.webp'
-import brandonAssociates from './assets/images/brandon_associates.webp'
+import brandonHealthcare from './assets/images/brandon_healthcare.webp'
 
 function App() {
+  const [strategicPlanningOpen, setStrategicPlanningOpen] = useState(false)
+  const [patientCareOpen, setPatientCareOpen] = useState(false)
+  const [healthcareAdminOpen, setHealthcareAdminOpen] = useState(false)
+  const [continuousLearningOpen, setContinuousLearningOpen] = useState(false)
+  const [leadershipPressureOpen, setLeadershipPressureOpen] = useState(false)
+  const [disciplineHonorOpen, setDisciplineHonorOpen] = useState(false)
+  const [serviceCountryOpen, setServiceCountryOpen] = useState(false)
+  const [workLifeBalanceOpen, setWorkLifeBalanceOpen] = useState(false)
+  const [coreValuesOpen, setCoreValuesOpen] = useState(false)
+  const [legacyFutureOpen, setLegacyFutureOpen] = useState(false)
+
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  const handleStrategicPlanningOpen = () => setStrategicPlanningOpen(true)
+  const handleStrategicPlanningClose = () => setStrategicPlanningOpen(false)
+  
+  const handlePatientCareOpen = () => setPatientCareOpen(true)
+  const handlePatientCareClose = () => setPatientCareOpen(false)
+  
+  const handleHealthcareAdminOpen = () => setHealthcareAdminOpen(true)
+  const handleHealthcareAdminClose = () => setHealthcareAdminOpen(false)
+  
+  const handleContinuousLearningOpen = () => setContinuousLearningOpen(true)
+  const handleContinuousLearningClose = () => setContinuousLearningOpen(false)
+  
+  const handleLeadershipPressureOpen = () => setLeadershipPressureOpen(true)
+  const handleLeadershipPressureClose = () => setLeadershipPressureOpen(false)
+  
+  const handleDisciplineHonorOpen = () => setDisciplineHonorOpen(true)
+  const handleDisciplineHonorClose = () => setDisciplineHonorOpen(false)
+  
+  const handleServiceCountryOpen = () => setServiceCountryOpen(true)
+  const handleServiceCountryClose = () => setServiceCountryOpen(false)
+  
+  const handleWorkLifeBalanceOpen = () => setWorkLifeBalanceOpen(true)
+  const handleWorkLifeBalanceClose = () => setWorkLifeBalanceOpen(false)
+  
+  const handleCoreValuesOpen = () => setCoreValuesOpen(true)
+  const handleCoreValuesClose = () => setCoreValuesOpen(false)
+  
+  const handleLegacyFutureOpen = () => setLegacyFutureOpen(true)
+  const handleLegacyFutureClose = () => setLegacyFutureOpen(false)
 
   return (
     <>
@@ -60,7 +104,7 @@ function App() {
           <Button color="inherit" onClick={() => scrollToSection('contact')}>
             Contact
           </Button>
-          <IconButton color="inherit" href="https://github.com" target="_blank">
+          <IconButton color="inherit" href="https://github.com/EchoThreeLima" target="_blank">
             <GitHub />
           </IconButton>
           <IconButton color="inherit" href="https://linkedin.com/in/brandon-lott-664728108/" target="_blank">
@@ -237,120 +281,132 @@ function App() {
             Leading teams and delivering results through strategic planning and execution
           </Typography>
           
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonSuit}
-                    alt="Brandon in professional setting"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Strategic Planning
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Developing comprehensive project roadmaps, identifying critical milestones, and ensuring successful delivery within scope and timeline.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonAssociates}
-                    alt="Brandon with team"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Team Leadership
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Building high-performing teams through effective communication, mentorship, and fostering collaborative environments.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonSuit}
-                    alt="Brandon managing projects"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Process Optimization
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Streamlining workflows, implementing best practices, and driving continuous improvement to maximize efficiency and quality.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
+            {/* Left side - Fixed Width Image */}
+            <Box
+              sx={{
+                flex: '0 0 400px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                pt: 0
+              }}
+            >
+              <Box
+                component="img"
+                src={brandonSuit}
+                alt="Brandon in professional setting"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: 3,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                  border: '2px solid rgba(16, 185, 129, 0.2)'
+                }}
+              />
+            </Box>
+
+            {/* Right side - Flexible Cards */}
+            <Box sx={{ flex: '1 1 auto' }}>
+              <Grid container spacing={2}>
+                {/* Strategic Planning Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleStrategicPlanningOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Strategic Planning
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Developing comprehensive project roadmaps, identifying critical milestones, and ensuring successful delivery within scope and timeline.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Team Leadership Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Typography variant="h6" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
+                        Team Leadership
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Building high-performing teams through effective communication, mentorship, and fostering collaborative environments.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Process Optimization Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Typography variant="h6" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
+                        Process Optimization
+                      </Typography>
+                      <Typography variant="body2" color="text.secondary">
+                        Streamlining workflows, implementing best practices, and driving continuous improvement to maximize efficiency and quality.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
         </Container>
-      </Box>
+        </Box>
 
       {/* Healthcare Section */}
       <Box id="healthcare" sx={{ 
@@ -364,189 +420,162 @@ function App() {
           </Typography>
           <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
             Dedicated to improving patient outcomes through compassionate care and clinical excellence
-          </Typography>
+        </Typography>
 
-          <Grid container spacing={3}>
-            <Grid item xs={12} md={6}>
-              <Card sx={{
-                boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 15px 35px rgba(0,0,0,0.12)'
-                }
-              }}>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Patient Care
-                  </Typography>
-                  <Box sx={{ mb: 2 }}>
-                    <Chip label="Compassionate Care" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Patient Advocacy" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Clinical Excellence" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                  </Box>
-                  <Typography variant="body1" color="text.secondary">
-                    Providing compassionate, patient-centered care with focus on dignity, respect, and clinical excellence.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Card sx={{
-                boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 15px 35px rgba(0,0,0,0.12)'
-                }
-              }}>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Communication
-                  </Typography>
-                  <Box sx={{ mb: 2 }}>
-                    <Chip label="Public Speaking" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Written Communication" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Interpersonal Skills" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                  </Box>
-                  <Typography variant="body1" color="text.secondary">
-                    Excellent communication skills across all levels of an organization.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Card sx={{
-                boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 15px 35px rgba(0,0,0,0.12)'
-                }
-              }}>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Problem Solving
-                  </Typography>
-                  <Box sx={{ mb: 2 }}>
-                    <Chip label="Critical Thinking" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Analytical Skills" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Innovation" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                  </Box>
-                  <Typography variant="body1" color="text.secondary">
-                    Proven ability to analyze complex situations and develop effective solutions.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={6}>
-              <Card sx={{
-                boxShadow: '0 8px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-2px)',
-                  boxShadow: '0 15px 35px rgba(0,0,0,0.12)'
-                }
-              }}>
-                <CardContent>
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Adaptability
-                  </Typography>
-                  <Box sx={{ mb: 2 }}>
-                    <Chip label="Change Management" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Flexibility" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                    <Chip label="Continuous Learning" sx={{ 
-                      mr: 1, mb: 1,
-                      backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                      color: '#059669',
-                      border: '1px solid rgba(16, 185, 129, 0.2)',
-                      fontWeight: 500
-                    }} />
-                  </Box>
-                  <Typography variant="body1" color="text.secondary">
-                    Thrives in dynamic environments and embraces new challenges.
-            </Typography>
-          </CardContent>
-        </Card>
-            </Grid>
-          </Grid>
+          <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
+            {/* Left side - Flexible Cards */}
+            <Box sx={{ flex: '1 1 auto' }}>
+              <Grid container spacing={2}>
+                {/* Patient Care Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handlePatientCareOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Patient Care
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Managing healthcare operations, staffing, coordinating care teams,and ensuring compliance with medical standards.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Healthcare Administration Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleHealthcareAdminOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Healthcare Administration
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Managing healthcare operations, coordinating care teams, and ensuring compliance with medical standards.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Continuous Learning Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+            <Button 
+                        variant="text"
+                        onClick={handleContinuousLearningOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Continuous Learning
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Staying current with medical advances, best practices, and continuing education to provide the highest quality care.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+            </Box>
+
+            {/* Right side - Fixed Width Image */}
+            <Box
+              sx={{
+                flex: '0 0 400px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                pt: 0
+              }}
+            >
+              <Box
+                component="img"
+                src={brandonHealthcare}
+                alt="Brandon in healthcare setting"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: 3,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                  border: '2px solid rgba(16, 185, 129, 0.2)'
+                }}
+              />
+            </Box>
+          </Box>
         </Container>
       </Box>
 
@@ -564,118 +593,160 @@ function App() {
             Proud veteran with a commitment to service, honor, and excellence
           </Typography>
           
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonMilitary}
-                    alt="Brandon in military uniform"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Leadership Under Pressure
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Developed exceptional leadership skills in high-stakes environments, making critical decisions with limited information.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonMilitary}
-                    alt="Brandon in service"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Discipline & Honor
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Instilled with core values of integrity, discipline, and commitment to mission success and team welfare.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonMilitary}
-                    alt="Brandon veteran"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Service to Country
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Honored to have served my country with dedication, protecting freedom and supporting fellow service members.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
+            {/* Left side - Fixed Width Image */}
+            <Box
+              sx={{
+                flex: '0 0 400px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                pt: 0
+              }}
+            >
+              <Box
+                component="img"
+                src={brandonMilitary}
+                alt="Brandon in military uniform"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: 3,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                  border: '2px solid rgba(16, 185, 129, 0.2)'
+                }}
+              />
+            </Box>
+
+            {/* Right side - Flexible Cards */}
+            <Box sx={{ flex: '1 1 auto' }}>
+              <Grid container spacing={2}>
+                {/* Leadership Under Pressure Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleLeadershipPressureOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Leadership Under Pressure
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Developed exceptional leadership skills in high-stakes environments, making critical decisions with limited information.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Discipline & Honor Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleDisciplineHonorOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Discipline & Honor
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Instilled with core values of integrity, discipline, honor, courage, and commitment to mission success and team welfare.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Service to Country Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleServiceCountryOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Service to Country
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Honored to have served my country with dedication, protecting freedom and supporting fellow service members.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
         </Container>
       </Box>
 
@@ -693,118 +764,160 @@ function App() {
             Family is the foundation of everything I do - my source of strength and motivation
           </Typography>
           
-          <Grid container spacing={4}>
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonFamily}
-                    alt="Brandon with family"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Work-Life Balance
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Committed to maintaining a healthy balance between professional excellence and quality time with loved ones.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonFamily}
-                    alt="Brandon family values"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Core Values
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Family teaches the importance of loyalty, compassion, and perseverance - values that guide all my decisions.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-            
-            <Grid item xs={12} md={4}>
-              <Card sx={{ 
-                height: '100%', 
-                textAlign: 'center',
-                boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
-                border: '1px solid rgba(16, 185, 129, 0.1)',
-                borderRadius: 3,
-                transition: 'all 0.3s ease',
-                '&:hover': {
-                  transform: 'translateY(-5px)',
-                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
-                  borderColor: 'rgba(16, 185, 129, 0.2)'
-                }
-              }}>
-                <CardContent sx={{ p: 3 }}>
-                  <Avatar
-                    src={brandonFamily}
-                    alt="Brandon with loved ones"
-                    sx={{ 
-                      width: 120, 
-                      height: 120, 
-                      mx: 'auto', 
-                      mb: 2,
-                      border: '3px solid rgba(16, 185, 129, 0.2)',
-                      boxShadow: '0 8px 20px rgba(0,0,0,0.1)'
-                    }}
-                  />
-                  <Typography variant="h5" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
-                    Legacy & Future
-                  </Typography>
-                  <Typography variant="body1" color="text.secondary">
-                    Working to build a better future for my family while honoring the legacy of those who came before us.
-                  </Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
+          <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
+            {/* Left side - Flexible Cards */}
+            <Box sx={{ flex: '1 1 auto' }}>
+              <Grid container spacing={2}>
+                {/* Work-Life Balance Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleWorkLifeBalanceOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Work-Life Balance
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Committed to maintaining a healthy balance between professional excellence and quality time with loved ones.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Core Values Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleCoreValuesOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Core Values
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Family teaches the importance of loyalty, compassion, and perseverance - values that guide all my decisions.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Legacy & Future Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleLegacyFutureOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Legacy & Future
+            </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Working to build a better future for my family and yours while honoring the legacy of those who came before us.
+            </Typography>
+          </CardContent>
+        </Card>
+                </Grid>
+              </Grid>
+            </Box>
+
+            {/* Right side - Fixed Width Image */}
+            <Box
+              sx={{
+                flex: '0 0 400px',
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'flex-start',
+                pt: 0
+              }}
+            >
+              <Box
+                component="img"
+                src={brandonFamily}
+                alt="Brandon with family"
+                sx={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain',
+                  borderRadius: 3,
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
+                  border: '2px solid rgba(16, 185, 129, 0.2)'
+                }}
+              />
+            </Box>
+          </Box>
         </Container>
       </Box>
 
@@ -834,7 +947,7 @@ function App() {
           </Typography>
           
           <Grid container spacing={4} justifyContent="center">
-            <Grid item xs={12} md={4} textAlign="center">
+            <Grid item xs={12} md={6} textAlign="center">
               <IconButton sx={{ color: 'white', mb: 2 }}>
                 <Email sx={{ fontSize: 40 }} />
               </IconButton>
@@ -842,23 +955,11 @@ function App() {
                 Email
               </Typography>
               <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                brandon.lott@example.com
+                lott.work@gmail.com
               </Typography>
             </Grid>
             
-            <Grid item xs={12} md={4} textAlign="center">
-              <IconButton sx={{ color: 'white', mb: 2 }}>
-                <Phone sx={{ fontSize: 40 }} />
-              </IconButton>
-              <Typography variant="h6" gutterBottom>
-                Phone
-              </Typography>
-              <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                (555) 123-4567
-              </Typography>
-            </Grid>
-            
-            <Grid item xs={12} md={4} textAlign="center">
+            <Grid item xs={12} md={6} textAlign="center">
               <IconButton sx={{ color: 'white', mb: 2 }}>
                 <LocationOn sx={{ fontSize: 40 }} />
               </IconButton>
@@ -866,7 +967,7 @@ function App() {
                 Location
               </Typography>
               <Typography variant="body1" sx={{ opacity: 0.9 }}>
-                Your City, State
+                Fountain Inn, South Carolina
               </Typography>
             </Grid>
           </Grid>
@@ -884,7 +985,7 @@ function App() {
                   mx: 1,
                   '&:hover': { backgroundColor: 'rgba(255,255,255,0.1)' }
                 }}
-                href="https://github.com"
+                href="https://github.com/EchoThreeLima"
                 target="_blank"
               >
                 <GitHub sx={{ fontSize: 30 }} />
@@ -895,7 +996,7 @@ function App() {
                   mx: 1,
                   '&:hover': { backgroundColor: 'rgba(255,255,255,0.1)' }
                 }}
-                href="https://linkedin.com"
+                 href="https://linkedin.com/in/brandon-lott-664728108/"
                 target="_blank"
               >
                 <LinkedIn sx={{ fontSize: 30 }} />
@@ -917,6 +1018,572 @@ function App() {
           © 2024 Brandon Lott. Built with React & Material-UI.
         </Typography>
       </Box>
+
+      {/* Healthcare Professional Modals */}
+      {/* Patient Care Modal */}
+      <Modal
+        open={patientCareOpen}
+        onClose={handlePatientCareClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={patientCareOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Patient Care</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Compassionate, patient-centered healthcare delivery</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Care Philosophy</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Every patient deserves dignity, respect, and personalized attention. Our approach focuses on treating the whole person, not just symptoms.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Holistic Care" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Patient Dignity" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Clinical Excellence</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Committed to the highest standards of medical practice through evidence-based care and continuous improvement.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Evidence-Based" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Quality Assurance" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handlePatientCareClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Healthcare Administration Modal */}
+      <Modal
+        open={healthcareAdminOpen}
+        onClose={handleHealthcareAdminClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={healthcareAdminOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Healthcare Administration</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Managing operations and ensuring quality care delivery</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Administrative Excellence</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Streamlining healthcare operations while maintaining the highest standards of patient care and regulatory compliance.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Operations Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Regulatory Compliance" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Team Leadership" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Quality Improvement" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleHealthcareAdminClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Continuous Learning Modal */}
+      <Modal
+        open={continuousLearningOpen}
+        onClose={handleContinuousLearningClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={continuousLearningOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Continuous Learning</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Commitment to lifelong education and professional growth</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Professional Development</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Staying at the forefront of medical advances through continuous education, research, and professional development initiatives.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Medical Education" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Research" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Best Practices" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Innovation" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleContinuousLearningClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Military Service Modals */}
+      {/* Leadership Under Pressure Modal */}
+      <Modal
+        open={leadershipPressureOpen}
+        onClose={handleLeadershipPressureClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={leadershipPressureOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Leadership Under Pressure</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Making critical decisions in high-stakes environments</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Combat Leadership</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Developed exceptional leadership capabilities through military service, learning to make critical decisions with limited information under extreme pressure.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Crisis Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Team Coordination" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Quick Decision Making" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleLeadershipPressureClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Discipline & Honor Modal */}
+      <Modal
+        open={disciplineHonorOpen}
+        onClose={handleDisciplineHonorClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={disciplineHonorOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Discipline & Honor</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Core values of integrity and commitment to excellence</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Military Values</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Instilled with core military values of integrity, discipline, and unwavering commitment to mission success and team welfare.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Integrity" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Discipline" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Honor" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Commitment" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleDisciplineHonorClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Service to Country Modal */}
+      <Modal
+        open={serviceCountryOpen}
+        onClose={handleServiceCountryClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={serviceCountryOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Service to Country</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Proud dedication to protecting freedom and serving others</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Patriotic Service</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Honored to have served my country with dedication, protecting freedom and supporting fellow service members in defense of our nation's values.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="National Defense" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Service Before Self" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Brotherhood" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleServiceCountryClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Family Values Modals */}
+      {/* Work-Life Balance Modal */}
+      <Modal
+        open={workLifeBalanceOpen}
+        onClose={handleWorkLifeBalanceClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={workLifeBalanceOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Work-Life Balance</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Harmonizing professional success with family time</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Balanced Living</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Committed to maintaining a healthy balance between professional excellence and quality time with loved ones, ensuring neither is compromised.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Time Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Priority Setting" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Quality Time" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleWorkLifeBalanceClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Core Values Modal */}
+      <Modal
+        open={coreValuesOpen}
+        onClose={handleCoreValuesClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={coreValuesOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Core Values</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Foundation principles that guide all decisions</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Family-Centered Values</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Family teaches the importance of loyalty, compassion, and perseverance - fundamental values that guide all my personal and professional decisions.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Loyalty" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Compassion" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Perseverance" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Integrity" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleCoreValuesClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Legacy & Future Modal */}
+      <Modal
+        open={legacyFutureOpen}
+        onClose={handleLegacyFutureClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{ timeout: 500 }}
+      >
+        <Fade in={legacyFutureOpen}>
+          <Box sx={{
+            position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+            width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' }, maxWidth: '800px', maxHeight: '90vh',
+            overflow: 'auto', bgcolor: 'background.paper', borderRadius: 4,
+            boxShadow: '0 20px 60px rgba(0,0,0,0.3)', p: 0, outline: 'none'
+          }}>
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Legacy & Future</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Building tomorrow while honoring yesterday</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={3}>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Generational Impact</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Working to build a better future for my family while honoring the legacy and sacrifices of those who came before us.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Future Planning" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Legacy Building" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Family Heritage" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button variant="contained" onClick={handleLegacyFutureClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Strategic Planning Modal */}
+      <Modal
+        open={strategicPlanningOpen}
+        onClose={handleStrategicPlanningClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={strategicPlanningOpen}>
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' },
+              maxWidth: '800px',
+              maxHeight: '90vh',
+              overflow: 'auto',
+              bgcolor: 'background.paper',
+              borderRadius: 4,
+              boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+              p: 0,
+              outline: 'none'
+            }}
+          >
+            {/* Modal Header */}
+            <Box
+              sx={{
+                background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                color: 'white',
+                p: 4,
+                borderRadius: '16px 16px 0 0'
+              }}
+            >
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>
+                Strategic Planning
+              </Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>
+                Comprehensive approach to project success and organizational growth
+              </Typography>
+            </Box>
+
+            {/* Modal Content */}
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={4}>
+                {/* Planning Process */}
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ height: '100%', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">
+                        Planning Process
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 2, mb: 2 }}>
+                        <Typography component="li" variant="body1" sx={{ mb: 1 }}>
+                          <strong>Vision Setting:</strong> Establishing clear, achievable long-term objectives
+                        </Typography>
+                        <Typography component="li" variant="body1" sx={{ mb: 1 }}>
+                          <strong>SWOT Analysis:</strong> Identifying strengths, weaknesses, opportunities, and threats
+                        </Typography>
+                        <Typography component="li" variant="body1" sx={{ mb: 1 }}>
+                          <strong>Resource Allocation:</strong> Optimizing human, financial, and technical resources
+                        </Typography>
+                        <Typography component="li" variant="body1">
+                          <strong>Timeline Development:</strong> Creating realistic milestones and deadlines
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Key Methodologies */}
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ height: '100%', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">
+                        Key Methodologies
+                      </Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Agile Planning" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />                       
+                        <Chip label="Lean Methodology" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Risk Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Stakeholder Analysis" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="KPI Development" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                      <Typography variant="body1" color="text.secondary">
+                        Utilizing proven frameworks to ensure systematic and effective planning outcomes.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Success Metrics */}
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">
+                        Success Metrics & Achievements
+                      </Typography>
+                      <Grid container spacing={3}>
+                        <Grid item xs={12} sm={4}>
+                          <Box textAlign="center">
+                            <Typography variant="h3" color="primary" fontWeight="bold">
+                              95%
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                              Project Success Rate
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <Box textAlign="center">
+                            <Typography variant="h3" color="primary" fontWeight="bold">
+                              15%
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                              Average Cost Reduction
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={4}>
+                          <Box textAlign="center">
+                            <Typography variant="h3" color="primary" fontWeight="bold">
+                              30%
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                              Timeline Improvement
+                            </Typography>
+                          </Box>
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+
+              {/* Close Button */}
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button
+                  variant="contained"
+                  onClick={handleStrategicPlanningClose}
+                  sx={{
+                    backgroundColor: '#059669',
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 3,
+                    '&:hover': {
+                      backgroundColor: '#047857'
+                    }
+                  }}
+                >
+                  Close
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
     </>
   )
 }
