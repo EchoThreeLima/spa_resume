@@ -151,7 +151,7 @@ function App() {
                   Hello, I'm Brandon
                 </Typography>
                 <Typography variant="h5" gutterBottom sx={{ mb: 3, opacity: 0.9 }}>
-                  Project Manager | Healthcare Professional | Veteran | Family Man
+                  Project Manager | Healthcare Professional | U.S.M.C.  Veteran | Family Man
                 </Typography>
                 <Typography variant="h6" sx={{ mb: 4, opacity: 0.8 }}>
                   Bringing dedication, customer care, leadership, and expertise to every challenge
