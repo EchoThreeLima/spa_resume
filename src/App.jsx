@@ -28,6 +28,8 @@ import brandonResume from './assets/png/brandon_resume.png'
 
 function App() {
   const [strategicPlanningOpen, setStrategicPlanningOpen] = useState(false)
+  const [teamLeadershipOpen, setTeamLeadershipOpen] = useState(false)
+  const [processOptimizationOpen, setProcessOptimizationOpen] = useState(false)
   const [patientCareOpen, setPatientCareOpen] = useState(false)
   const [healthcareAdminOpen, setHealthcareAdminOpen] = useState(false)
   const [continuousLearningOpen, setContinuousLearningOpen] = useState(false)
@@ -47,6 +49,12 @@ function App() {
 
   const handleStrategicPlanningOpen = () => setStrategicPlanningOpen(true)
   const handleStrategicPlanningClose = () => setStrategicPlanningOpen(false)
+  
+  const handleTeamLeadershipOpen = () => setTeamLeadershipOpen(true)
+  const handleTeamLeadershipClose = () => setTeamLeadershipOpen(false)
+  
+  const handleProcessOptimizationOpen = () => setProcessOptimizationOpen(true)
+  const handleProcessOptimizationClose = () => setProcessOptimizationOpen(false)
   
   const handlePatientCareOpen = () => setPatientCareOpen(true)
   const handlePatientCareClose = () => setPatientCareOpen(false)
@@ -406,9 +414,24 @@ function App() {
                     }
                   }}>
                     <CardContent sx={{ p: 2 }}>
-                      <Typography variant="h6" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleTeamLeadershipOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
                         Team Leadership
-                      </Typography>
+                      </Button>
                       <Typography variant="body2" color="text.secondary">
                         Building high-performing teams through effective communication, mentorship, and fostering collaborative environments.
                       </Typography>
@@ -432,9 +455,24 @@ function App() {
                     }
                   }}>
                     <CardContent sx={{ p: 2 }}>
-                      <Typography variant="h6" gutterBottom sx={{ color: '#059669', fontWeight: 600 }}>
+                      <Button
+                        variant="text"
+                        onClick={handleProcessOptimizationOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
                         Process Optimization
-                      </Typography>
+                      </Button>
                       <Typography variant="body2" color="text.secondary">
                         Streamlining workflows, implementing best practices, and driving continuous improvement to maximize efficiency and quality.
                       </Typography>
@@ -1621,6 +1659,185 @@ function App() {
                   Close
                 </Button>
               </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Team Leadership Modal */}
+      <Modal
+        open={teamLeadershipOpen}
+        onClose={handleTeamLeadershipClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={teamLeadershipOpen}>
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' },
+              maxWidth: '800px',
+              maxHeight: '90vh',
+              overflow: 'auto',
+              bgcolor: 'background.paper',
+              borderRadius: 4,
+              boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+              p: 0,
+              outline: 'none'
+            }}
+          >
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Team Leadership</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Building high-performing teams through effective communication and collaboration</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={4}>
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Leadership Philosophy</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Empowering team members through trust, clear communication, and shared vision while fostering an environment of continuous growth and collaboration.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Servant Leadership" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Team Empowerment" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Clear Communication" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Team Development</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Identifying individual strengths, providing mentorship opportunities, and creating pathways for professional growth and skill enhancement.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Mentorship" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Skill Development" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Performance Coaching" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Collaborative Excellence</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Creating synergistic team environments where diverse perspectives are valued, conflicts are resolved constructively, and collective goals are achieved efficiently.</Typography>
+                      <Box component="ul" sx={{ pl: 3, mb: 2 }}>
+                        <Typography component="li" variant="body1">
+                          <strong>Cross-functional Coordination:</strong> Facilitating seamless collaboration between departments and stakeholders
+                        </Typography>
+                        <Typography component="li" variant="body1">
+                          <strong>Conflict Resolution:</strong> Mediating disputes and turning challenges into growth opportunities
+                        </Typography>
+                        <Typography component="li" variant="body1">
+                          <strong>Team Motivation:</strong> Inspiring high performance through recognition and shared purpose
+                        </Typography>
+                      </Box>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Cross-functional Teams" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Conflict Resolution" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Team Motivation" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Performance Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Process Optimization Modal */}
+      <Modal
+        open={processOptimizationOpen}
+        onClose={handleProcessOptimizationClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={processOptimizationOpen}>
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' },
+              maxWidth: '800px',
+              maxHeight: '90vh',
+              overflow: 'auto',
+              bgcolor: 'background.paper',
+              borderRadius: 4,
+              boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+              p: 0,
+              outline: 'none'
+            }}
+          >
+            <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Process Optimization</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Streamlining workflows and driving continuous improvement for maximum efficiency</Typography>
+            </Box>
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={4}>
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Workflow Analysis</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Systematic evaluation of existing processes to identify bottlenecks, redundancies, and opportunities for improvement through data-driven analysis.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Process Mapping" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Bottleneck Analysis" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Data Analytics" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Implementation Strategy</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Developing and executing comprehensive improvement plans with clear timelines, measurable outcomes, and stakeholder buy-in.</Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Change Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Stakeholder Engagement" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="ROI Measurement" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+                <Grid item xs={12}>
+                  <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Continuous Improvement Culture</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Establishing sustainable practices that promote ongoing optimization, innovation, and adaptability across all organizational levels.</Typography>
+                      <Box component="ul" sx={{ pl: 3, mb: 2 }}>
+                        <Typography component="li" variant="body1">
+                          <strong>Lean Methodology:</strong> Eliminating waste and maximizing value through systematic process refinement
+                        </Typography>
+                        <Typography component="li" variant="body1">
+                          <strong>Quality Management:</strong> Implementing robust quality control systems and performance metrics
+                        </Typography>
+                      </Box>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Lean Principles" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Quality Control" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Performance Metrics" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Innovation Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
             </Box>
           </Box>
         </Fade>
