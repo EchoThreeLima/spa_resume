@@ -1084,10 +1084,11 @@ function App() {
                   <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <CardContent>
                       <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Care Philosophy</Typography>
-                      <Typography variant="body1" sx={{ mb: 2 }}>Every patient deserves dignity, respect, and personalized attention. Our approach focuses on treating the whole person, not just symptoms.</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Every patient deserves dignity, respect, and personalized attention. My approach focuses on treating the whole person, not just symptoms.</Typography>
                       <Box sx={{ mb: 2 }}>
                         <Chip label="Holistic Care" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Patient Dignity" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Personalized Attention" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                       </Box>
                     </CardContent>
                   </Card>
@@ -1100,6 +1101,7 @@ function App() {
                       <Box sx={{ mb: 2 }}>
                         <Chip label="Evidence-Based" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Quality Assurance" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Record Keeping" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                       </Box>
                     </CardContent>
                   </Card>
@@ -1143,7 +1145,8 @@ function App() {
                         <Chip label="Operations Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Regulatory Compliance" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Team Leadership" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
-                        <Chip label="Quality Improvement" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="cGMP" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Corrective Action Reporting" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                       </Box>
                     </CardContent>
                   </Card>
@@ -1226,7 +1229,7 @@ function App() {
                 <Grid item xs={12}>
                   <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <CardContent>
-                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Combat Leadership</Typography>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Tactical Leadership</Typography>
                       <Typography variant="body1" sx={{ mb: 2 }}>Developed exceptional leadership capabilities through military service, learning to make critical decisions with limited information under extreme pressure.</Typography>
                       <Box sx={{ mb: 2 }}>
                         <Chip label="Crisis Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
@@ -1262,7 +1265,7 @@ function App() {
           }}>
             <Box sx={{ background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)', color: 'white', p: 4, borderRadius: '16px 16px 0 0' }}>
               <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>Discipline & Honor</Typography>
-              <Typography variant="h6" sx={{ opacity: 0.9 }}>Core values of integrity and commitment to excellence</Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>Core values of honor, courageand commitment to excellence</Typography>
             </Box>
             <Box sx={{ p: 4 }}>
               <Grid container spacing={3}>
@@ -1270,7 +1273,7 @@ function App() {
                   <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <CardContent>
                       <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Military Values</Typography>
-                      <Typography variant="body1" sx={{ mb: 2 }}>Instilled with core military values of integrity, discipline, and unwavering commitment to mission success and team welfare.</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Instilled with core military values of integrity, discipline, honor, courage, and unwavering commitment to mission success and team welfare.</Typography>
                       <Box sx={{ mb: 2 }}>
                         <Chip label="Integrity" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Discipline" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
@@ -1313,8 +1316,8 @@ function App() {
                 <Grid item xs={12}>
                   <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <CardContent>
-                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Patriotic Service</Typography>
-                      <Typography variant="body1" sx={{ mb: 2 }}>Honored to have served my country with dedication, protecting freedom and supporting fellow service members in defense of our nation's values.</Typography>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">United States Marine Corps</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Honored to have served my country with honor, protecting freedom, and supporting fellow service members in defense of our nation's values.</Typography>
                       <Box sx={{ mb: 2 }}>
                         <Chip label="National Defense" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Service Before Self" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
@@ -1445,7 +1448,7 @@ function App() {
                   <Card sx={{ border: '1px solid rgba(16, 185, 129, 0.2)' }}>
                     <CardContent>
                       <Typography variant="h5" gutterBottom color="primary" fontWeight="600">Generational Impact</Typography>
-                      <Typography variant="body1" sx={{ mb: 2 }}>Working to build a better future for my family while honoring the legacy and sacrifices of those who came before us.</Typography>
+                      <Typography variant="body1" sx={{ mb: 2 }}>Working to build a better future for my family and yours while honoring the legacy and sacrifices of those who came before us.</Typography>
                       <Box sx={{ mb: 2 }}>
                         <Chip label="Future Planning" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Legacy Building" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
@@ -1529,7 +1532,7 @@ function App() {
                           <strong>Resource Allocation:</strong> Optimizing human, financial, and technical resources
                         </Typography>
                         <Typography component="li" variant="body1">
-                          <strong>Timeline Development:</strong> Creating realistic milestones and deadlines
+                          <strong>Timeline Development:</strong> Creating realistic milestones and deadlines using SDLC and agile methodologies
                         </Typography>
                       </Box>
                     </CardContent>
@@ -1545,13 +1548,12 @@ function App() {
                       </Typography>
                       <Box sx={{ mb: 2 }}>
                         <Chip label="Agile Planning" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />                       
-                        <Chip label="Lean Methodology" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Risk Management" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Stakeholder Analysis" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="KPI Development" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                       </Box>
                       <Typography variant="body1" color="text.secondary">
-                        Utilizing proven frameworks to ensure systematic and effective planning outcomes.
+                        Utilizing agile and SDLC methodologies to ensure systematic and effective planning outcomes and milestones.
                       </Typography>
                     </CardContent>
                   </Card>
@@ -1571,27 +1573,27 @@ function App() {
                               95%
                             </Typography>
                             <Typography variant="body1" color="text.secondary">
-                              Project Success Rate
+                              Targeted KPI Achieved
+                            </Typography>
+                          </Box>
+                        </Grid>
+                        <Grid item xs={12} sm={4} >
+                          <Box textAlign="center" >
+                            <Typography variant="h3" color="primary" fontWeight="bold">
+                              20%
+                            </Typography>
+                            <Typography variant="body1" color="text.secondary">
+                              Average Timeline Reduction
                             </Typography>
                           </Box>
                         </Grid>
                         <Grid item xs={12} sm={4}>
                           <Box textAlign="center">
                             <Typography variant="h3" color="primary" fontWeight="bold">
-                              15%
+                              50%
                             </Typography>
                             <Typography variant="body1" color="text.secondary">
-                              Average Cost Reduction
-                            </Typography>
-                          </Box>
-                        </Grid>
-                        <Grid item xs={12} sm={4}>
-                          <Box textAlign="center">
-                            <Typography variant="h3" color="primary" fontWeight="bold">
-                              30%
-                            </Typography>
-                            <Typography variant="body1" color="text.secondary">
-                              Timeline Improvement
+                              New Client Acquisitions
                             </Typography>
                           </Box>
                         </Grid>
