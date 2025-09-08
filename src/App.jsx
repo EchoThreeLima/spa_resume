@@ -24,7 +24,7 @@ import brandonSuit from './assets/images/brandon_suit.webp'
 import brandonMilitary from './assets/images/brandon_military.webp'
 import brandonFamily from './assets/images/brandon_family.webp'
 import brandonHealthcare from './assets/images/brandon_healthcare.webp'
-import brandonResume from './assets/png/brandon_resume.png'
+import brandonResumePDF from './assets/png/resume_brandon.pdf'
 
 function App() {
   const [strategicPlanningOpen, setStrategicPlanningOpen] = useState(false)
@@ -85,8 +85,9 @@ function App() {
 
   const handleResumeDownload = () => {
     const link = document.createElement('a')
-    link.href = brandonResume
-    link.download = 'Brandon_Lott_Resume.png'
+    link.href = brandonResumePDF + '?t=' + new Date().getTime()
+    link.download = 'Brandon_Lott_Resume.pdf'
+    link.setAttribute('type', 'application/pdf')
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -288,9 +289,9 @@ function App() {
                   }}
                   onClick={handleResumeDownload}
                 >
-                    Resume
+                   Resume
                 </Button>
-              </Box>
+          </Box>
             </Grid>
             <Grid item xs={12} md={6}>
               <Box sx={{ display: 'flex', justifyContent: 'center', }}>
@@ -309,7 +310,7 @@ function App() {
             </Grid>
           </Grid>
         </Container>
-          </Box>
+        </Box>
 
       {/* Project Management Section */}
       <Box id="project-management" sx={{ 
@@ -323,8 +324,8 @@ function App() {
           </Typography>
           <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
             Leading teams and delivering results through strategic planning and execution
-          </Typography>
-          
+        </Typography>
+
           <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
             {/* Left side - Fixed Width Image */}
             <Box
@@ -370,7 +371,7 @@ function App() {
                     }
                   }}>
                     <CardContent sx={{ p: 2 }}>
-                      <Button
+            <Button 
                         variant="text"
                         onClick={handleStrategicPlanningOpen}
                         sx={{
@@ -387,12 +388,12 @@ function App() {
                         }}
                       >
                         Strategic Planning
-                      </Button>
+            </Button>
                       <Typography variant="body2" color="text.secondary">
                         Developing comprehensive project roadmaps, identifying critical milestones, and ensuring successful delivery within scope and timeline.
-                      </Typography>
-                    </CardContent>
-                  </Card>
+            </Typography>
+          </CardContent>
+        </Card>
                 </Grid>
 
                 {/* Team Leadership Card */}
@@ -431,7 +432,7 @@ function App() {
                       </Button>
                       <Typography variant="body2" color="text.secondary">
                         Building high-performing teams through effective communication, mentorship, and fostering collaborative environments.
-                      </Typography>
+        </Typography>
                     </CardContent>
                   </Card>
                 </Grid>
@@ -479,7 +480,7 @@ function App() {
               </Grid>
             </Box>
           </Box>
-        </Container>
+      </Container>
         </Box>
 
       {/* Healthcare Section */}
