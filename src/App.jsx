@@ -661,10 +661,12 @@ function App() {
       }}>
         <Container maxWidth="lg">
           <Typography variant="h3" component="h2" textAlign="center" gutterBottom>
-            Military Service
+            Military Service (
+              USMC
+            )
           </Typography>
           <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
-            Proud veteran with a commitment to service, honor, and excellence
+            Proud Marine Corps veteran with a commitment to service, honor, and excellence
           </Typography>
           
           <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
