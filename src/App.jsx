@@ -17,13 +17,14 @@ import {
   Fade,
   Backdrop
 } from '@mui/material'
-import { GitHub, LinkedIn, Email, LocationOn } from '@mui/icons-material'
+import { GitHub, LinkedIn, Email, LocationOn, Download } from '@mui/icons-material'
 
 // Import your images
 import brandonSuit from './assets/images/brandon_suit.webp'
 import brandonMilitary from './assets/images/brandon_military.webp'
 import brandonFamily from './assets/images/brandon_family.webp'
 import brandonHealthcare from './assets/images/brandon_healthcare.webp'
+import brandonResume from './assets/png/brandon_resume.png'
 
 function App() {
   const [strategicPlanningOpen, setStrategicPlanningOpen] = useState(false)
@@ -73,6 +74,15 @@ function App() {
   
   const handleLegacyFutureOpen = () => setLegacyFutureOpen(true)
   const handleLegacyFutureClose = () => setLegacyFutureOpen(false)
+
+  const handleResumeDownload = () => {
+    const link = document.createElement('a')
+    link.href = brandonResume
+    link.download = 'Brandon_Lott_Resume.png'
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
 
   return (
     <>
@@ -246,6 +256,35 @@ function App() {
                 >
                    Family
                 </Button>
+                <Button 
+                  variant="contained" 
+                  size="large"
+                  startIcon={<Download />}
+                  sx={{ 
+                    backgroundColor: 'rgba(255,255,255,0.9)', 
+                    color: '#059669',
+                    backdropFilter: 'blur(10px)',
+                    border: '2px solid rgba(255,255,255,0.3)',
+                    borderRadius: 3,
+                    px: 4,
+                    py: 1.5,
+                    mr: 2,
+                    mb: 2,
+                    fontWeight: 700,
+                    textTransform: 'none',
+                    fontSize: '1.1rem',
+                    boxShadow: '0 8px 25px rgba(0,0,0,0.2)',
+                    '&:hover': { 
+                      backgroundColor: 'rgba(255,255,255,1)',
+                      transform: 'translateY(-2px)',
+                      boxShadow: '0 12px 35px rgba(0,0,0,0.3)',
+                      borderColor: 'rgba(5, 150, 105, 0.3)'
+                    }
+                  }}
+                  onClick={handleResumeDownload}
+                >
+                    Resume
+                </Button>
               </Box>
             </Grid>
             <Grid item xs={12} md={6}>
@@ -254,8 +293,8 @@ function App() {
                   src={brandonSuit}
                   alt="Brandon in suit"
                   sx={{ 
-                    width: { xs: 200, md: 300 }, 
-                    height: { xs: 400, md: 500 },
+                    width: { xs: 200, md: 400 }, 
+                    height: { xs: 400, md: 600 },
                     border: '4px solid rgba(255,255,255,0.2)',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
                     bgcolor: 'grey'
