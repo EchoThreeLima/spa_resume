@@ -140,7 +140,7 @@ function App() {
           alignItems: 'center',
           background: 'linear-gradient(135deg, #10B981 0%, #059669 50%, #047857 100%)',
           color: 'white',
-          pt: 8
+          pt: 12
         }}
       >
         <Container maxWidth="lg">
@@ -150,10 +150,7 @@ function App() {
                 <Typography variant="h2" component="h1" gutterBottom fontWeight="bold">
                   Hello, I'm Brandon
                 </Typography>
-                <Typography variant="h5" gutterBottom sx={{ mb: 3, opacity: 0.9 }}>
-                  Project Manager | Healthcare Professional | U.S.M.C.  Veteran | Family Man
-                </Typography>
-                <Typography variant="h6" sx={{ mb: 4, opacity: 0.8 }}>
+                <Typography variant="h6" sx={{ mb: 4, opacity: 0.9 }}>
                   Bringing dedication, customer care, leadership, and expertise to every challenge
                 </Typography>
                  <Button 
