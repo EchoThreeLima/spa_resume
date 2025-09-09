@@ -27,6 +27,7 @@ import brandonHealthcare from './assets/images/brandon_healthcare.webp'
 import brandonResumePDF from './assets/png/resume_brandon.pdf'
 
 function App() {
+  const [dataAnalyticsOpen, setDataAnalyticsOpen] = useState(false)
   const [strategicPlanningOpen, setStrategicPlanningOpen] = useState(false)
   const [teamLeadershipOpen, setTeamLeadershipOpen] = useState(false)
   const [processOptimizationOpen, setProcessOptimizationOpen] = useState(false)
@@ -47,6 +48,9 @@ function App() {
     }
   }
 
+  const handleDataAnalyticsOpen = () => setDataAnalyticsOpen(true)
+  const handleDataAnalyticsClose = () => setDataAnalyticsOpen(false)
+  
   const handleStrategicPlanningOpen = () => setStrategicPlanningOpen(true)
   const handleStrategicPlanningClose = () => setStrategicPlanningOpen(false)
   
@@ -326,7 +330,7 @@ function App() {
             Leading teams and delivering results through strategic planning and execution
         </Typography>
 
-          <Box sx={{ display: 'flex', gap: 3, alignItems: 'flex-start' }}>
+          <Box sx={{ display: 'flex', gap: 1, alignItems: 'flex-start' }}>
             {/* Left side - Fixed Width Image */}
             <Box
               sx={{
@@ -334,7 +338,7 @@ function App() {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'flex-start',
-                pt: 0
+                pt: 0,
               }}
             >
               <Box
@@ -343,7 +347,7 @@ function App() {
                 alt="Brandon in professional setting"
                 sx={{
                   width: '100%',
-                  height: 'auto',
+                  height: '100%',
                   objectFit: 'contain',
                   borderRadius: 3,
                   boxShadow: '0 10px 30px rgba(0,0,0,0.1)',
@@ -355,6 +359,47 @@ function App() {
             {/* Right side - Flexible Cards */}
             <Box sx={{ flex: '1 1 auto' }}>
               <Grid container spacing={2}>
+                {/* Data Analytics Card */}
+                <Grid item xs={12} md={4}>
+                  <Card sx={{ 
+                    height: '100%',
+                    textAlign: 'left',
+                    boxShadow: '0 10px 25px rgba(0,0,0,0.08)',
+                    border: '1px solid rgba(16, 185, 129, 0.1)',
+                    borderRadius: 3,
+                    transition: 'all 0.3s ease',
+                    '&:hover': {
+                      transform: 'translateY(-5px)',
+                      boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                      borderColor: 'rgba(16, 185, 129, 0.2)'
+                    }
+                  }}>
+                    <CardContent sx={{ p: 2 }}>
+                      <Button 
+                        variant="text"
+                        onClick={handleDataAnalyticsOpen}
+                        sx={{
+                          color: '#059669',
+                          fontWeight: 600,
+                          fontSize: '1.25rem',
+                          textTransform: 'none',
+                          p: 0,
+                          mb: 1,
+                          '&:hover': {
+                            backgroundColor: 'rgba(16, 185, 129, 0.1)',
+                            textDecoration: 'underline'
+                          }
+                        }}
+                      >
+                        Data Analytics
+                      </Button>
+                      <Typography variant="body2" color="text.secondary">
+                        Leveraging data-driven insights to inform decision-making, optimize performance, and identify growth opportunities.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
                 {/* Strategic Planning Card */}
                 <Grid item xs={12} md={4}>
                   <Card sx={{ 
@@ -536,7 +581,7 @@ function App() {
                         Patient Care
                       </Button>
                       <Typography variant="body2" color="text.secondary">
-                        Managing healthcare operations, staffing, coordinating care teams,and ensuring compliance with medical standards.
+                        Managing healthcare operations, staffing, coordinating care teams, training, and ensuring a patient advocate mindset.
                       </Typography>
                     </CardContent>
                   </Card>
@@ -577,7 +622,7 @@ function App() {
                         Healthcare Administration
                       </Button>
                       <Typography variant="body2" color="text.secondary">
-                        Managing healthcare operations, coordinating care teams, and ensuring compliance with medical standards.
+                        Managing healthcare operations, coordinating care teams, and ensuring compliance with medical standards and regulations.
                       </Typography>
                     </CardContent>
                   </Card>
@@ -615,7 +660,7 @@ function App() {
                           }
                         }}
                       >
-                        Continuous Learning
+                        Continuous Education
                       </Button>
                       <Typography variant="body2" color="text.secondary">
                         Staying current with medical advances, best practices, and continuing education to provide the highest quality care.
@@ -662,9 +707,7 @@ function App() {
       }}>
         <Container maxWidth="lg">
           <Typography variant="h3" component="h2" textAlign="center" gutterBottom>
-            Military Service (
-              USMC
-            )
+            Military Service - USMC
           </Typography>
           <Typography variant="h6" textAlign="center" color="text.secondary" sx={{ mb: 6 }}>
             Proud Marine Corps veteran with a commitment to service, honor, and excellence
@@ -1498,6 +1541,123 @@ function App() {
               </Grid>
               <Box sx={{ mt: 4, textAlign: 'center' }}>
                 <Button variant="contained" onClick={handleLegacyFutureClose} sx={{ backgroundColor: '#059669', px: 4, py: 1.5, borderRadius: 3, '&:hover': { backgroundColor: '#047857' } }}>Close</Button>
+              </Box>
+            </Box>
+          </Box>
+        </Fade>
+      </Modal>
+
+      {/* Data Analytics Modal */}
+      <Modal
+        open={dataAnalyticsOpen}
+        onClose={handleDataAnalyticsClose}
+        closeAfterTransition
+        BackdropComponent={Backdrop}
+        BackdropProps={{
+          timeout: 500,
+        }}
+      >
+        <Fade in={dataAnalyticsOpen}>
+          <Box
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: '50%',
+              transform: 'translate(-50%, -50%)',
+              width: { xs: '90%', sm: '80%', md: '70%', lg: '60%' },
+              maxWidth: '800px',
+              maxHeight: '90vh',
+              overflow: 'auto',
+              bgcolor: 'background.paper',
+              borderRadius: 4,
+              boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+              p: 0,
+              outline: 'none'
+            }}
+          >
+            {/* Modal Header */}
+            <Box
+              sx={{
+                background: 'linear-gradient(135deg, #10B981 0%, #059669 100%)',
+                color: 'white',
+                p: 4,
+                borderRadius: '16px 16px 0 0'
+              }}
+            >
+              <Typography variant="h3" component="h2" fontWeight="bold" gutterBottom>
+                Data Analytics
+              </Typography>
+              <Typography variant="h6" sx={{ opacity: 0.9 }}>
+                Transforming data into actionable insights for strategic decision-making
+              </Typography>
+            </Box>
+
+            {/* Modal Content */}
+            <Box sx={{ p: 4 }}>
+              <Grid container spacing={4}>
+                {/* Data Collection & Processing */}
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ height: '100%', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">
+                        Data Collection & Processing
+                      </Typography>
+                      <Box component="ul" sx={{ pl: 2, mb: 2 }}>
+                        <Typography component="li" variant="body1" sx={{ mb: 1 }}>
+                          <strong>Data Integration:</strong> Combining multiple data sources for comprehensive analysis
+                        </Typography>
+                        <Typography component="li" variant="body1" sx={{ mb: 1 }}>
+                          <strong>Quality Assurance:</strong> Ensuring data accuracy, completeness, and reliability
+                        </Typography>
+                        <Typography component="li" variant="body1" sx={{ mb: 1 }}>
+                          <strong>ETL Processes:</strong> Extract, Transform, Load operations for data warehousing
+                        </Typography>
+                        <Typography component="li" variant="body1">
+                          <strong>Real-time Processing:</strong> Live data streams and automated reporting systems
+                        </Typography>
+                      </Box>
+                    </CardContent>
+                  </Card>
+                </Grid>
+
+                {/* Analytics & Insights */}
+                <Grid item xs={12} md={6}>
+                  <Card sx={{ height: '100%', border: '1px solid rgba(16, 185, 129, 0.2)' }}>
+                    <CardContent>
+                      <Typography variant="h5" gutterBottom color="primary" fontWeight="600">
+                        Analytics & Insights
+                      </Typography>
+                      <Box sx={{ mb: 2 }}>
+                        <Chip label="Statistical Analysis" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />                       
+                        <Chip label="Predictive Modeling" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Data Visualization" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Trend Analysis" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                      </Box>
+                      <Typography variant="body1" color="text.secondary">
+                        Advanced analytical techniques to uncover patterns, predict trends, and generate actionable business intelligence.
+                      </Typography>
+                    </CardContent>
+                  </Card>
+                </Grid>
+              </Grid>
+
+              {/* Close Button */}
+              <Box sx={{ mt: 4, textAlign: 'center' }}>
+                <Button
+                  variant="contained"
+                  onClick={handleDataAnalyticsClose}
+                  sx={{
+                    backgroundColor: '#059669',
+                    px: 4,
+                    py: 1.5,
+                    borderRadius: 3,
+                    '&:hover': {
+                      backgroundColor: '#047857'
+                    }
+                  }}
+                >
+                  Close
+                </Button>
               </Box>
             </Box>
           </Box>
