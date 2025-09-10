@@ -25,6 +25,7 @@ import brandonMilitary from './assets/images/brandon_military.webp'
 import brandonFamily from './assets/images/brandon_family.webp'
 import brandonHealthcare from './assets/images/brandon_healthcare.webp'
 import brandonResumePDF from './assets/png/resume_brandon.pdf'
+import brandonLive from './assets/images/brandon_live.webp'
 
 function App() {
   const [dataAnalyticsOpen, setDataAnalyticsOpen] = useState(false)
@@ -300,11 +301,11 @@ function App() {
             <Grid item xs={12} md={6}>
               <Box sx={{ display: 'flex', justifyContent: 'center', }}>
                 <Avatar
-                  src={brandonSuit}
+                  src={brandonLive}
                   alt="Brandon in suit"
                   sx={{ 
-                    width: { xs: 200, md: 400 }, 
-                    height: { xs: 400, md: 600 },
+                    width: { xs: 200, md: 280 }, 
+                    height: { xs: 400, md: 425 },
                     border: '4px solid rgba(255,255,255,0.2)',
                     boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
                     bgcolor: 'grey'
