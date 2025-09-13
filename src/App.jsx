@@ -1633,6 +1633,9 @@ function App() {
                         <Chip label="Predictive Modeling" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Data Visualization" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                         <Chip label="Trend Analysis" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Excel Pivot Tables" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="SQL Queries" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
+                        <Chip label="Data Cleaning" sx={{ mr: 1, mb: 1, backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#059669' }} />
                       </Box>
                       <Typography variant="body1" color="text.secondary">
                         Advanced analytical techniques to uncover patterns, predict trends, and generate actionable business intelligence.
